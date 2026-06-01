@@ -20,7 +20,7 @@ const Logo = ({ className = '', showText = true, size = 'md' }) => {
           }}
         />
         <img 
-          src="/logo.svg" 
+          src="/logo.jpg" 
           alt="AdVortex AI Logo" 
           className={`${styles.vortexImage} ${styles.spinAnimation}`}
         />
