@@ -1,0 +1,112 @@
+.logoContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logoContainer:hover {
+  transform: scale(1.02);
+}
+
+.vortexWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.glowEffect {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  /* Removed expensive filter: blur and used softer gradient stops */
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.4) 0%, rgba(0, 229, 255, 0.2) 20%, rgba(168, 85, 247, 0.1) 40%, transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.vortexImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.spinAnimation {
+  animation: spin 30s linear infinite;
+}
+
+.logoContainer:hover .vortexImage {
+  transform: scale(1.1);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.logoContainer:hover .spinAnimation {
+  animation: spin 30s linear infinite, scaleUp 0.3s forwards;
+}
+
+.logoText {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.logoAccent {
+  color: var(--color-cyan);
+  background: linear-gradient(90deg, var(--color-cyan), var(--color-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 2px;
+}
+
+/* Sizes */
+.sm .vortexImage {
+  width: 32px;
+  height: 32px;
+}
+.sm .logoText {
+  font-size: 20px;
+}
+
+.md .vortexImage {
+  width: 48px;
+  height: 48px;
+}
+.md .logoText {
+  font-size: 24px;
+}
+
+.lg .vortexImage {
+  width: 80px;
+  height: 80px;
+}
+.lg .logoText {
+  font-size: 36px;
+}
+.lg .vortexWrapper {
+  gap: 16px;
+}
+
+.xl .vortexImage {
+  width: 150px;
+  height: 150px;
+}
+.xl .logoText {
+  font-size: 64px;
+}

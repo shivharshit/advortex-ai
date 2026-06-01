@@ -1,0 +1,61 @@
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import Hero from '../components/sections/Hero';
+import TrustLogos from '../components/sections/TrustLogos';
+import Services from '../components/sections/Services';
+import Process from '../components/sections/Process';
+import Results from '../components/sections/Results';
+import CaseStudies from '../components/sections/CaseStudies';
+import Testimonials from '../components/sections/Testimonials';
+import Pricing from '../components/sections/Pricing';
+import FAQ from '../components/sections/FAQ';
+import FinalCTA from '../components/sections/FinalCTA';
+import AIParticles from '../components/ui/AIParticles';
+import heroVideo from '../assets/hero-video.mp4';
+import styles from './Home.module.css';
+
+const Home = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className={styles.homeContainer} ref={containerRef}>
+      {/* Layer 1 & 2: Video and Gradient Overlay */}
+      <div className={styles.videoBackground}>
+        <video 
+          src={heroVideo} 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className={styles.videoElement}
+        />
+        <div className={styles.videoOverlay} />
+      </div>
+
+      {/* Layer 4: Content */}
+      <div className={styles.contentLayer}>
+        <Hero />
+        
+        {/* Wrap the rest of the sections in a cinematic glassmorphism container */}
+        <div className={styles.cinematicSection}>
+          <AIParticles />
+          <TrustLogos />
+          <Services />
+          <Process />
+          <Results />
+          <CaseStudies />
+          <Testimonials />
+          <Pricing />
+          <FAQ />
+          <FinalCTA />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;

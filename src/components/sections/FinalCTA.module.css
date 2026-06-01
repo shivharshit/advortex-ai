@@ -1,0 +1,120 @@
+.ctaSection {
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.glassPanel {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 20px;
+  background: rgba(10, 10, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 40px;
+  padding: 80px 40px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 0 80px rgba(0, 229, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.particleBg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color-cyan);
+  border-radius: 50%;
+  top: var(--y);
+  left: var(--x);
+  opacity: 0.3;
+  box-shadow: 0 0 10px var(--color-cyan);
+  animation: float var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); opacity: 0.1; }
+  25% { transform: translate(20px, -20px); opacity: 0.5; }
+  50% { transform: translate(-10px, 30px); opacity: 0.2; }
+  75% { transform: translate(-30px, -10px); opacity: 0.6; }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: var(--color-purple);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 56px;
+  color: var(--color-white);
+  margin-bottom: 24px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 16px 40px;
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .glassPanel {
+    padding: 60px 20px;
+    border-radius: 24px;
+  }
+  
+  .title {
+    font-size: 40px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}

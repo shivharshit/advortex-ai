@@ -1,0 +1,685 @@
+.portfolioPage {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+}
+
+/* Hero Section */
+.heroSection {
+  padding: 180px 0 100px;
+  text-align: center;
+  position: relative;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: var(--color-purple);
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.heroTitle {
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.1;
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  margin-bottom: 30px;
+}
+
+.heroDesc {
+  font-size: clamp(18px, 2vw, 22px);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+/* Featured Work Section */
+.workSection {
+  padding: 100px 0;
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+}
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.projectRow {
+  display: flex;
+  align-items: stretch;
+  gap: 60px;
+  min-height: 500px;
+}
+
+.projectRow.reverse {
+  flex-direction: row-reverse;
+}
+
+.projectContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.projectVisual {
+  flex: 1.2;
+  position: relative;
+  perspective: 1500px;
+}
+
+.visualWrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.projectRow:hover .visualWrapper {
+  transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.projectRow.reverse:hover .visualWrapper {
+  transform: translateY(-10px) rotateX(2deg) rotateY(2deg);
+}
+
+.projectCategory {
+  color: var(--color-cyan);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.projectTitle {
+  font-size: 40px;
+  color: var(--color-white);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.projectDesc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.highlightsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-white);
+  font-size: 15px;
+}
+
+.highlightIcon {
+  color: var(--color-cyan);
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.techBadge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Mockups CSS */
+.mockupGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15), transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.mockupInner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* Dashboard Mockup (Website) */
+.dashWindow {
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 20, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.dashHeader {
+  height: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot:nth-child(1) { background: #ff5f56; }
+.dot:nth-child(2) { background: #ffbd2e; }
+.dot:nth-child(3) { background: #27c93f; }
+.dashBody {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+}
+.dashSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dashLine {
+  height: 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+}
+.dashMain {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.dashHero {
+  height: 120px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(0,229,255,0.2));
+  border-radius: 8px;
+}
+.dashGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.dashCard {
+  height: 80px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.dashImageContainer {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.dashImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Chat Mockup (Vortex AI) */
+.chatWindow {
+  width: 320px;
+  height: 400px;
+  background: rgba(10, 10, 15, 0.9);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.chatHeader {
+  padding: 16px;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.chatAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chatTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+.chatStatus {
+  font-size: 11px;
+  color: var(--color-cyan);
+}
+.chatBody {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.chatBubble {
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 13px;
+  max-width: 80%;
+  line-height: 1.5;
+}
+.chatBot {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.chatUser {
+  background: var(--gradient-primary);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.chatInput {
+  height: 60px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 12px;
+}
+.inputLine {
+  flex: 1;
+  height: 36px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* Nodes Mockup (Workflow) */
+.nodesWindow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.nodeBox {
+  position: absolute;
+  background: rgba(30, 27, 75, 0.8);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 14px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+.nodeIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(168,85,247,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c084fc;
+}
+.nodeLine {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(168,85,247,0.5), rgba(0,229,255,0.5));
+  z-index: 1;
+}
+
+/* Process Section */
+.processSection {
+  padding: 100px 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40px;
+  height: 100%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.timelineStep {
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+.stepNumber {
+  width: 80px;
+  height: 80px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-cyan);
+  flex-shrink: 0;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+}
+
+.stepContent {
+  padding-top: 10px;
+}
+
+.stepTitle {
+  font-size: 28px;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.stepDesc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Why Choose Us Section */
+.whySection {
+  padding: 120px 0;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.whyCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.whyCard:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.whyIcon {
+  color: var(--color-cyan);
+  margin-bottom: 20px;
+}
+
+.whyCard h3 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.whyCard p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Founder Perspective */
+.founderSection {
+  padding: 100px 0;
+  position: relative;
+}
+
+.quoteWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(30, 27, 75, 0.5), rgba(0, 0, 0, 0.5));
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 30px;
+  padding: 80px 60px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.quoteMark {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-cyan);
+  opacity: 0.8;
+}
+
+.quoteText {
+  font-size: 28px;
+  color: var(--color-white);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.founderInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.founderAvatar {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+}
+
+.founderDetails {
+  text-align: left;
+}
+
+.founderName {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.founderTitle {
+  color: var(--color-cyan);
+  font-size: 14px;
+}
+
+/* Final CTA */
+.ctaSection {
+  padding: 100px 0;
+}
+
+.ctaCard {
+  background: var(--glass-bg);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 30px;
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaCard::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.1), transparent 60%);
+  z-index: 0;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaContent h2 {
+  font-size: 48px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.ctaContent p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .projectRow, .projectRow.reverse {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .visualWrapper {
+    min-height: 300px;
+  }
+  .whyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 40px;
+  }
+  .sectionTitle {
+    font-size: 36px;
+  }
+  .timeline::before {
+    left: 30px;
+  }
+  .timelineStep {
+    gap: 20px;
+  }
+  .stepNumber {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .whyGrid {
+    grid-template-columns: 1fr;
+  }
+  .quoteWrapper {
+    padding: 60px 30px;
+  }
+  .quoteText {
+    font-size: 20px;
+  }
+  .ctaContent h2 {
+    font-size: 36px;
+  }
+  .ctaButtons {
+    flex-direction: column;
+  }
+}

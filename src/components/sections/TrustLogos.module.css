@@ -1,0 +1,124 @@
+.trustSection {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+  margin-top: -60px; /* Pull it slightly into the hero section */
+}
+
+.glassContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(10, 10, 15, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 40px 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.glowEdge {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.8), rgba(168, 85, 247, 0.8), transparent);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.label {
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.logoCloud {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.leftGradient, .rightGradient {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.leftGradient {
+  left: 0;
+  background: linear-gradient(to right, rgba(10, 10, 15, 1), transparent);
+}
+
+.rightGradient {
+  right: 0;
+  background: linear-gradient(to left, rgba(10, 10, 15, 1), transparent);
+}
+
+.logoTrack {
+  display: flex;
+  width: calc(200px * 30); /* 10 logos * 3 sets * approx width */
+  animation: scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.logoTrack:hover {
+  animation-play-state: paused;
+}
+
+.logoItem {
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  filter: grayscale(100%) opacity(0.5);
+}
+
+.logoItem:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+.logoText {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-white);
+  letter-spacing: -0.5px;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-200px * 10)); } /* Scroll one full set */
+}
+
+@media (max-width: 768px) {
+  .trustSection {
+    margin-top: -30px;
+  }
+  .glassContainer {
+    margin: 0 16px;
+    border-radius: 16px;
+    padding: 30px 10px;
+  }
+  .logoItem {
+    min-width: 150px;
+  }
+  .leftGradient, .rightGradient {
+    width: 50px;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-150px * 10)); }
+  }
+}

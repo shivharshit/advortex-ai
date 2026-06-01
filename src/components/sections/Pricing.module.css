@@ -1,0 +1,323 @@
+.pricingSection {
+  padding: 120px 0;
+  position: relative;
+  min-height: 1000px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: var(--color-white);
+  opacity: 0.7;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.tabs {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px;
+  border-radius: 9999px;
+  border: 1px solid var(--glass-border);
+}
+
+.tabBtn {
+  background: transparent;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.tabBtn.activeTab {
+  background: var(--gradient-primary);
+  opacity: 1;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.monthlyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 32px 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.2);
+  z-index: 10;
+}
+
+.featured {
+  background: rgba(30, 27, 75, 0.4);
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.15);
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cardHeader {
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 20px;
+}
+
+.cardHeader h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: var(--color-white);
+}
+
+.planSubtitle {
+  font-size: 13px;
+  color: var(--color-cyan);
+  margin-bottom: 16px;
+  line-height: 1.4;
+  height: 36px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  margin-bottom: 16px;
+  color: var(--color-cyan);
+}
+
+.price span {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.bestFor {
+  font-size: 13px;
+  color: var(--color-white);
+  opacity: 0.8;
+  line-height: 1.5;
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkIcon {
+  color: var(--color-cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature span {
+  font-size: 14px;
+  color: var(--color-white);
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+@keyframes borderGlow {
+  0% { box-shadow: 0 0 5px rgba(0, 229, 255, 0.4), inset 0 0 2px rgba(0, 229, 255, 0.4); border-color: rgba(0, 229, 255, 0.5); }
+  50% { box-shadow: 0 0 15px rgba(168, 85, 247, 0.8), inset 0 0 5px rgba(168, 85, 247, 0.5); border-color: rgba(168, 85, 247, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(0, 229, 255, 0.4), inset 0 0 2px rgba(0, 229, 255, 0.4); border-color: rgba(0, 229, 255, 0.5); }
+}
+
+.button {
+  width: 100%;
+  animation: borderGlow 3s infinite alternate;
+}
+
+/* Packs Section */
+.packsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.packsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.packCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 24px;
+  border-radius: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.packCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-cyan);
+}
+
+.highValuePack {
+  background: rgba(168, 85, 247, 0.05);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.highValueBadge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--gradient-primary);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.packCard h4 {
+  font-size: 18px;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.packPrice {
+  color: var(--color-cyan);
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-family: var(--font-heading);
+}
+
+.packCard p {
+  font-size: 14px;
+  color: var(--color-white);
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.oneTimeList {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 40px;
+}
+
+.oneTimeTitle {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 32px;
+  color: var(--color-white);
+}
+
+.oneTimeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.oneTimeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.serviceName {
+  font-weight: 500;
+  color: var(--color-white);
+  font-size: 15px;
+}
+
+.servicePrice {
+  color: var(--color-cyan);
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+@media (max-width: 1200px) {
+  .monthlyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .packsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .monthlyGrid {
+    grid-template-columns: 1fr;
+  }
+  .packsGrid {
+    grid-template-columns: 1fr;
+  }
+  .oneTimeGrid {
+    grid-template-columns: 1fr;
+  }
+  .tabs {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .tabBtn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,351 @@
+.pageWrapper {
+  padding-top: 120px;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Animations */
+.particlesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.floatingLogosContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.floatingLogo {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  opacity: 0.1;
+  filter: grayscale(100%) brightness(200%);
+}
+
+.headerSection {
+  text-align: center;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  position: relative;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-cyan);
+  margin-bottom: 32px;
+  display: inline-block;
+}
+
+.badgeGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-purple);
+  filter: blur(15px);
+  opacity: 0.2;
+  border-radius: 999px;
+  z-index: -1;
+}
+
+.pageTitle {
+  font-size: 56px;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.pageSubtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Counters Section */
+.counterSection {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.counterGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.counterCard {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(10, 13, 36, 0.6) !important;
+  border: 1px solid rgba(0, 229, 255, 0.2) !important;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.counterCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(168, 85, 247, 0.5) !important;
+}
+
+.counterCard h3 {
+  font-size: 48px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.counterCard p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Tabs Section */
+.tabsSection {
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.tabsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tabBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.tabBtn.activeTab {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: var(--color-cyan);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+/* Tools Section */
+.toolsSection {
+  padding: 40px 0 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.categoryBlock {
+  width: 100%;
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.categoryIcon {
+  color: var(--color-purple);
+}
+
+.categoryTitle {
+  font-size: 28px;
+  color: var(--color-white);
+}
+
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* 3D Tilt Card */
+.tiltCardWrapper {
+  position: relative;
+  height: 100%;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  background: rgba(10, 13, 36, 0.6);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.tiltCardWrapper:hover {
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+.glowSpotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.toolCardContent {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: translateZ(20px);
+}
+
+.toolHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateZ(30px);
+}
+
+.toolLogo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.fallbackLogo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-cyan);
+  z-index: 2;
+}
+
+.logoGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: var(--color-cyan);
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.tiltCardWrapper:hover .logoGlow {
+  opacity: 0.3;
+}
+
+.tiltCardWrapper:hover .logoWrapper {
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.toolName {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-white);
+  transform: translateZ(25px);
+}
+
+.toolDesc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  flex-grow: 1;
+  transform: translateZ(10px);
+}
+
+@media (max-width: 1024px) {
+  .counterGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 40px;
+  }
+  .counterGrid {
+    grid-template-columns: 1fr;
+  }
+  .tabsWrapper {
+    gap: 8px;
+  }
+  .tabBtn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  .toolsGrid {
+    grid-template-columns: 1fr;
+  }
+}
