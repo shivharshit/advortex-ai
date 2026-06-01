@@ -3,6 +3,11 @@ import express from 'express';
 import cors from 'cors';
 import { Resend } from 'resend';
 import db from './db.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(cors());
@@ -281,6 +286,13 @@ app.get('/api/careers', (req, res) => {
     }
     res.json(rows);
   });
+});
+
+// Serve static frontend files for monolithic deployment
+app.use(express.static(path.join(__dirname, '../dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 const PORT = process.env.PORT || 3001;
