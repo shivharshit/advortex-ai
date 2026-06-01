@@ -291,7 +291,8 @@ app.get('/api/careers', (req, res) => {
 // Serve static frontend files for monolithic deployment
 app.use(express.static(path.join(__dirname, '../dist')));
 
-app.get('*', (req, res) => {
+// Catch-all route to serve the React app
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
