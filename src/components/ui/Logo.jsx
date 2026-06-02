@@ -23,6 +23,7 @@ const Logo = ({ className = '', showText = true, size = 'md' }) => {
           src="/logo.jpg" 
           alt="AdVortex AI Logo" 
           className={`${styles.vortexImage} ${styles.spinAnimation}`}
+          style={{ mixBlendMode: 'screen' }}
         />
       </div>
       {showText && (
