@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import CustomCursor from './components/ui/CustomCursor';
@@ -29,30 +30,32 @@ function App() {
     <>
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       <div style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.8s ease-in-out' }}>
-        <Router>
-          <CustomCursor />
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/ai-tools" element={<AITools />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-of-service" element={<TermsOfService />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/careers" element={<Careers />} />
-            </Routes>
-          </main>
-          <Footer />
-          <Chatbot />
-          <WhatsAppButton />
-        </Router>
+        <HelmetProvider>
+          <Router>
+            <CustomCursor />
+            <Navbar />
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/ai-tools" element={<AITools />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/pricing" element={<PricingPage />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-of-service" element={<TermsOfService />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/careers" element={<Careers />} />
+              </Routes>
+            </main>
+            <Footer />
+            <Chatbot />
+            <WhatsAppButton />
+          </Router>
+        </HelmetProvider>
       </div>
     </>
   );

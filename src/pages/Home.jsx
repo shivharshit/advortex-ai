@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Hero from '../components/sections/Hero';
 import TrustLogos from '../components/sections/TrustLogos';
@@ -24,6 +25,12 @@ const Home = () => {
 
   return (
     <div className={styles.homeContainer} ref={containerRef}>
+      <Helmet>
+        <title>AdVortex AI | Elite AI Automation Agency</title>
+        <meta name="description" content="AdVortex AI builds highly intelligent chatbots, automated CRM systems, and high-converting marketing solutions. Scale your business and generate leads on autopilot." />
+        <meta name="keywords" content="AI Automation Agency, Custom AI Chatbots, Marketing Automation, Web Development, Workflow Automation, AdVortex AI" />
+      </Helmet>
+
       {/* Layer 1 & 2: Video and Gradient Overlay */}
       <div className={styles.videoBackground}>
         <video 

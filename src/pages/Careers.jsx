@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code, PenTool, TrendingUp, MonitorSmartphone, GraduationCap, CheckCircle2, MapPin, Briefcase, Mail } from 'lucide-react';
 import Section from '../components/ui/Section';
@@ -102,6 +103,11 @@ const Careers = () => {
 
   return (
     <div className={styles.pageWrapper}>
+      <Helmet>
+        <title>Careers at AdVortex AI | Join Our Team</title>
+        <meta name="description" content="Join AdVortex AI and build the future of artificial intelligence. We are hiring AI Engineers, Full Stack Developers, and Marketing Specialists." />
+        <meta name="keywords" content="AdVortex AI Careers, AI Jobs, Tech Jobs, React Developer Jobs, AI Engineer Jobs, Hiring" />
+      </Helmet>
       {/* Background Visuals */}
       <div className={styles.bgGlow1} />
       <div className={styles.bgGlow2} />
