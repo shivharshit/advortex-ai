@@ -285,7 +285,8 @@ const Blog = () => {
               </Link>
             </motion.div>
           ))}
-        </div>
+          </div>
+        )}
       </Section>
 
       {/* Founder Perspective */}
