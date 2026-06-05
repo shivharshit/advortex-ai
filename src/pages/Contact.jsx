@@ -220,9 +220,11 @@ const Contact = () => {
                 </div>
                 <div className={styles.noPressure}>No obligations. No pressure. Just actionable insights.</div>
                 
-                <Button variant="primary" className={styles.strategyBtn}>
-                  Book Free Consultation
-                </Button>
+                <a href="https://calendly.com/advortexai/free-ai-growth-strategy-call" target="_blank" rel="noopener noreferrer">
+                  <Button variant="primary" className={styles.strategyBtn}>
+                    Book Free Consultation
+                  </Button>
+                </a>
               </GlassCard>
             </motion.div>
           </div>
@@ -423,7 +425,9 @@ const Contact = () => {
           <p>Let's build intelligent systems that save time, generate more leads, and help your business grow faster.</p>
           
           <div className={styles.ctaActions}>
-            <Button variant="primary" className={styles.pulseBtn}>Book Free Strategy Call</Button>
+            <a href="https://calendly.com/advortexai/free-ai-growth-strategy-call" target="_blank" rel="noopener noreferrer">
+              <Button variant="primary" className={styles.pulseBtn}>Book Free Strategy Call</Button>
+            </a>
             <a href="https://wa.me/919183347948" target="_blank" rel="noreferrer">
               <Button variant="secondary">Chat On WhatsApp</Button>
             </a>
