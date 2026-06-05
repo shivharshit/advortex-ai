@@ -51,14 +51,8 @@ const Blog = () => {
   const [email, setEmail] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   
-  const featuredCategories = ["AI Automation", "Digital Marketing", "AI Tools", "Website Development", "AI News & Trends"];
-  const featuredArticles = featuredCategories.map(cat => articlesData.find(a => a.category === cat)).filter(Boolean);
-  
-  const featuredIds = new Set(featuredArticles.map(a => a.id));
-  const allArticles = articlesData.filter(a => !featuredIds.has(a.id));
-  
   const latestArticlesList = activeCategory === 'All' 
-    ? allArticles 
+    ? articlesData 
     : articlesData.filter(a => a.category === activeCategory);
 
   useEffect(() => {
@@ -154,62 +148,6 @@ const Blog = () => {
         </motion.div>
       </Section>
 
-      {/* Featured Articles */}
-      <Section className={styles.featuredSection}>
-        <h2 className={styles.sectionTitle}>Featured Insights</h2>
-        <div className={styles.featuredGrid}>
-          {featuredArticles.map((article, index) => (
-            <motion.div
-              key={article.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className={index === 0 ? styles.featuredMain : styles.featuredSub}
-            >
-              <GlassCard className={styles.featuredCard}>
-                <div className={styles.featuredImageWrapper}>
-                  <img src={article.img} alt={article.title} className={styles.featuredImage} />
-                  <div className={styles.featuredCategory}>{article.category}</div>
-                </div>
-                
-                <div className={styles.featuredContent}>
-                  <h2 className={styles.featuredTitle}>
-                    <Link to={`/blog/${article.id}`} style={{textDecoration: 'none', color: 'inherit'}}>
-                      {article.title}
-                    </Link>
-                  </h2>
-                  
-                  {index === 0 && (
-                    <p className={styles.featuredDesc}>
-                      {article.content.split('\n').find(p => p.length > 50)?.substring(0, 160)}...
-                    </p>
-                  )}
-                  
-                  <div className={styles.articleMeta}>
-                    <div className={styles.authorInfo}>
-                      <img src="/founder.jpg" alt={article.author} className={styles.authorAvatar} />
-                      <span>{article.author}</span>
-                    </div>
-                    <div className={styles.readTime}>
-                      <Clock size={16} />
-                      <span>{article.readTime}</span>
-                    </div>
-                  </div>
-                  
-                  {index === 0 && (
-                    <Link to={`/blog/${article.id}`} style={{textDecoration: 'none'}}>
-                      <Button variant="primary" className={styles.readBtn}>
-                        Read Article <ArrowRight size={18} />
-                      </Button>
-                    </Link>
-                  )}
-                </div>
-              </GlassCard>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
 
       {/* Categories */}
       <Section className={styles.categoriesSection}>
