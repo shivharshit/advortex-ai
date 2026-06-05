@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div className={styles.homeContainer} ref={containerRef}>
       <Helmet>
-        <title>AdVortex AI | Elite AI Automation Agency</title>
+        <title>AdVortex AI | AI Powered Digital Marketing Agency</title>
         <meta name="description" content="AdVortex AI builds highly intelligent chatbots, automated CRM systems, and high-converting marketing solutions. Scale your business and generate leads on autopilot." />
         <meta name="keywords" content="AdVortex, AdVortexAI, Ad Vortex, Ad Vortex AI, AdVortex Agency, AI Automation Agency, Custom AI Chatbots, Marketing Automation, Web Development, Workflow Automation, ChatGPT Integration, Zapier Expert, Make.com Expert, Lead Generation Agency, AI Business Solutions, Enterprise AI Solutions, Automated Customer Support, AI Assistants, SEO Services, Digital Marketing, E-commerce Automation, B2B Lead Generation" />
       </Helmet>
