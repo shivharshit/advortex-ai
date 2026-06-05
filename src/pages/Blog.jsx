@@ -51,6 +51,12 @@ const Blog = () => {
   const [email, setEmail] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   
+  const featuredCategories = ["AI Automation", "Digital Marketing", "AI Tools", "Website Development", "AI News & Trends"];
+  const featuredArticles = featuredCategories.map(cat => articlesData.find(a => a.category === cat)).filter(Boolean);
+  
+  const featuredIds = new Set(featuredArticles.map(a => a.id));
+  const allArticles = articlesData.filter(a => !featuredIds.has(a.id));
+  
   const latestArticlesList = activeCategory === 'All' 
     ? articlesData 
     : articlesData.filter(a => a.category === activeCategory);
@@ -148,6 +154,41 @@ const Blog = () => {
         </motion.div>
       </Section>
 
+      {/* Featured Insights Carousel/Grid */}
+      <Section className={styles.featuredSection}>
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle}>Editor's Picks</h2>
+          <p className={styles.sectionSubtitle}>Top insights across our core categories</p>
+        </div>
+        
+        <div className={styles.featuredSleekGrid}>
+          {featuredArticles.map((article, index) => (
+            <motion.div
+              key={article.id}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.4 }}
+            >
+              <Link to={`/blog/${article.id}`} className={styles.sleekCardLink}>
+                <div className={styles.sleekCard}>
+                  <div className={styles.sleekImageWrapper}>
+                    <img src={article.img} alt={article.title} className={styles.sleekImage} />
+                    <div className={styles.sleekCategoryBadge}>{article.category}</div>
+                  </div>
+                  <div className={styles.sleekContent}>
+                    <h3 className={styles.sleekTitle}>{article.title}</h3>
+                    <div className={styles.sleekMeta}>
+                      <Clock size={14} />
+                      <span>{article.readTime}</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
 
       {/* Categories */}
       <Section className={styles.categoriesSection}>
