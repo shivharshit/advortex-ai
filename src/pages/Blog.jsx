@@ -16,7 +16,7 @@ const categoriesData = [
     topics: ["Best AI Tools", "ChatGPT Guides", "Claude Tutorials", "Gemini Updates", "DeepSeek Insights", "Qwen Use Cases"]
   },
   {
-    title: "Automation",
+    title: "AI Automation",
     icon: Zap,
     desc: "Learn how businesses automate repetitive tasks and create efficient workflows.",
     topics: ["n8n Tutorials", "Zapier Automations", "Make Workflows", "CRM Automation", "Business Systems"]
@@ -49,9 +49,13 @@ const popularTags = [
 
 const Blog = () => {
   const [email, setEmail] = useState('');
+  const [activeCategory, setActiveCategory] = useState('All');
   
   const featuredArticle = articlesData[0];
-  const latestArticlesList = articlesData.slice(1, 6);
+  const allArticles = articlesData.slice(1);
+  const latestArticlesList = activeCategory === 'All' 
+    ? allArticles 
+    : allArticles.filter(a => a.category === activeCategory);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -191,6 +195,21 @@ const Blog = () => {
       <Section className={styles.categoriesSection}>
         <h2 className={styles.sectionTitle}>Browse By Category</h2>
         <div className={styles.categoryGrid}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            onClick={() => setActiveCategory('All')}
+            style={{ cursor: 'pointer' }}
+          >
+            <GlassCard className={`${styles.categoryCard} ${activeCategory === 'All' ? styles.activeCategory : ''}`}>
+              <div className={styles.catHeader}>
+                <BookOpen className={styles.catIcon} size={24} />
+                <h3>All Articles</h3>
+              </div>
+              <p className={styles.catDesc}>Browse all our latest insights and strategies.</p>
+            </GlassCard>
+          </motion.div>
           {categoriesData.map((cat, idx) => (
             <motion.div
               key={idx}
@@ -199,7 +218,14 @@ const Blog = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
             >
-              <GlassCard className={styles.categoryCard}>
+              <GlassCard 
+                className={`${styles.categoryCard} ${activeCategory === cat.title ? styles.activeCategory : ''}`}
+                onClick={() => {
+                  setActiveCategory(cat.title);
+                  document.getElementById('latest-articles').scrollIntoView({ behavior: 'smooth' });
+                }}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className={styles.catHeader}>
                   <cat.icon className={styles.catIcon} size={24} />
                   <h3>{cat.title}</h3>
@@ -217,10 +243,18 @@ const Blog = () => {
       </Section>
 
       {/* Latest Articles Grid */}
-      <Section className={styles.latestSection}>
-        <h2 className={styles.sectionTitle}>Latest Articles</h2>
-        <div className={styles.articlesGrid}>
-          {latestArticlesList.map((article, idx) => (
+      <Section className={styles.latestSection} id="latest-articles">
+        <h2 className={styles.sectionTitle}>
+          {activeCategory === 'All' ? 'Latest Articles' : `${activeCategory} Articles`}
+        </h2>
+        
+        {latestArticlesList.length === 0 ? (
+          <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)' }}>
+            No articles found in this category yet.
+          </div>
+        ) : (
+          <div className={styles.articlesGrid}>
+            {latestArticlesList.map((article, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}

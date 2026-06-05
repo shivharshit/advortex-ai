@@ -215,6 +215,12 @@
   border-color: rgba(0, 229, 255, 0.4);
 }
 
+.activeCategory {
+  border-color: var(--color-cyan);
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(10, 13, 36, 0.8));
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+}
+
 .catHeader {
   display: flex;
   align-items: center;
