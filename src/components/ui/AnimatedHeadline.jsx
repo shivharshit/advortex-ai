@@ -100,9 +100,9 @@ const AnimatedHeadline = () => {
     <div className={styles.container}>
       <motion.h1 
         className={styles.headline}
-        initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
         {renderHighlightedText(displayedHeadline)}
         <motion.span 

@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const AIParticles = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div style={{
       position: 'absolute',
@@ -9,10 +18,10 @@ const AIParticles = () => {
       pointerEvents: 'none',
       zIndex: 0,
       overflow: 'hidden',
-      opacity: 0.4
+      opacity: isMobile ? 0.2 : 0.4
     }}>
-      {/* Floating Particles */}
-      {[...Array(15)].map((_, i) => (
+      {/* Floating Particles - Render fewer on mobile */}
+      {[...Array(isMobile ? 5 : 15)].map((_, i) => (
         <motion.div
           key={`particle-${i}`}
           animate={{
@@ -39,33 +48,35 @@ const AIParticles = () => {
         />
       ))}
 
-      {/* SVG Neural Network Lines (Data streams) */}
-      <svg width="100%" height="100%" style={{ position: 'absolute', top: 0, left: 0, opacity: 0.15 }}>
-        <defs>
-          <linearGradient id="streamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="rgba(0,229,255,0)" />
-            <stop offset="50%" stopColor="rgba(0,229,255,1)" />
-            <stop offset="100%" stopColor="rgba(168,85,247,0)" />
-          </linearGradient>
-        </defs>
-        {[...Array(4)].map((_, i) => (
-          <motion.rect
-            key={`stream-${i}`}
-            x={`${10 + i * 12}%`}
-            y="-20%"
-            width="1"
-            height="30%"
-            fill="url(#streamGrad)"
-            animate={{ y: ["-20%", "120%"] }}
-            transition={{
-              duration: 5 + Math.random() * 5,
-              repeat: Infinity,
-              ease: "linear",
-              delay: Math.random() * 5
-            }}
-          />
-        ))}
-      </svg>
+      {/* SVG Neural Network Lines (Data streams) - Disabled entirely on mobile to save GPU */}
+      {!isMobile && (
+        <svg width="100%" height="100%" style={{ position: 'absolute', top: 0, left: 0, opacity: 0.15 }}>
+          <defs>
+            <linearGradient id="streamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="rgba(0,229,255,0)" />
+              <stop offset="50%" stopColor="rgba(0,229,255,1)" />
+              <stop offset="100%" stopColor="rgba(168,85,247,0)" />
+            </linearGradient>
+          </defs>
+          {[...Array(4)].map((_, i) => (
+            <motion.rect
+              key={`stream-${i}`}
+              x={`${10 + i * 12}%`}
+              y="-20%"
+              width="1"
+              height="30%"
+              fill="url(#streamGrad)"
+              animate={{ y: ["-20%", "120%"] }}
+              transition={{
+                duration: 5 + Math.random() * 5,
+                repeat: Infinity,
+                ease: "linear",
+                delay: Math.random() * 5
+              }}
+            />
+          ))}
+        </svg>
+      )}
     </div>
   );
 };

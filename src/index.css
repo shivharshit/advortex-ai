@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
-
+/* Fonts moved to index.html for faster FCP/LCP */
 :root {
   --color-cyan: #00E5FF;
   --color-purple: #A855F7;
@@ -95,8 +94,8 @@ a {
   }
   
   .glass-panel {
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    background: rgba(10, 13, 36, 0.7);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(10, 13, 36, 0.95);
   }
 }

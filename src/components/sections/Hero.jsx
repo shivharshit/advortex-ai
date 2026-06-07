@@ -243,9 +243,9 @@ const Hero = () => {
 
         <motion.div 
           className={styles.badge}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
         >
           <span className={styles.badgeDot}></span>
           Next-Gen AI Agency
@@ -255,9 +255,9 @@ const Hero = () => {
 
         <motion.div 
           className={styles.actions}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
         >
           <Link to="/contact">
             <Button variant="primary">Book a Free Strategy Call</Button>
@@ -271,9 +271,9 @@ const Hero = () => {
       {/* 3D Dashboard Mockup Overlay */}
       <motion.div 
         className={styles.dashboardMockup}
-        initial={{ opacity: 0, y: 100, rotateX: 20 }}
+        initial={{ opacity: 0, y: 30, rotateX: 5 }}
         animate={{ opacity: 1, y: 0, rotateX: 0 }}
-        transition={{ duration: 1.2, delay: 0.8, type: 'spring' }}
+        transition={{ duration: 0.5, delay: 0.2, type: 'spring' }}
       >
         <div className={styles.mockupGlass}>
           <div className={styles.mockupHeader}>
