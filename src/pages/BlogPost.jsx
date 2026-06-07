@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, User, Share2, MessageCircle, Mail, Link as LinkIcon } from 'lucide-react';
 import Section from '../components/ui/Section';
@@ -42,6 +43,19 @@ const BlogPost = () => {
 
   return (
     <div className={styles.pageWrapper}>
+      <Helmet>
+        <title>{article.title} - AdVortexAI</title>
+        <meta name="description" content={article.content.substring(0, 160).replace(/#/g, '').trim() + '...'} />
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.content.substring(0, 160).replace(/#/g, '').trim() + '...'} />
+        <meta property="og:image" content={article.img} />
+        <meta property="og:url" content={`https://advortex.in/blog/${article.id}`} />
+        <meta name="twitter:title" content={article.title} />
+        <meta name="twitter:description" content={article.content.substring(0, 160).replace(/#/g, '').trim() + '...'} />
+        <meta name="twitter:image" content={article.img} />
+        <link rel="canonical" href={`https://advortex.in/blog/${article.id}`} />
+      </Helmet>
+
       {/* Background Particles */}
       <div className={styles.particlesContainer}>
         {[...Array(10)].map((_, i) => (
