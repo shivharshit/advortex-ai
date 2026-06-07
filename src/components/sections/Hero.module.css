@@ -491,13 +491,34 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+  }
+  .headline {
+    font-size: clamp(36px, 8vw, 84px);
+  }
   .actions {
     flex-direction: column;
+    width: 100%;
+  }
+  .actions button {
+    width: 100%;
   }
   .sidebar {
     display: none;
   }
   .bottomArea {
     flex-direction: column;
+  }
+  .topMetrics {
+    flex-direction: column;
+  }
+  .mockupGlass {
+    height: auto;
+    min-height: 500px;
+  }
+  .mainArea {
+    padding: 16px;
+    gap: 16px;
   }
 }

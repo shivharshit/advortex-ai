@@ -59,7 +59,58 @@ const Navbar = () => {
             <Button variant="primary">Book a Call</Button>
           </Link>
         </div>
+
+        {/* Mobile Menu Toggle */}
+        <button 
+          className={styles.mobileMenuBtn} 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle Menu"
+        >
+          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            className={styles.mobileMenu}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: '100vh' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <div className={styles.mobileLinks}>
+              {links.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 + 0.1 }}
+                >
+                  <NavLink 
+                    to={link.path}
+                    className={({ isActive }) => isActive ? styles.mobileActive : ''}
+                    onClick={closeMobileMenu}
+                  >
+                    {link.name}
+                  </NavLink>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: links.length * 0.05 + 0.1 }}
+                className={styles.mobileActions}
+              >
+                <Link to="/contact" onClick={closeMobileMenu}>
+                  <Button variant="primary" style={{ width: '100%' }}>Book a Call</Button>
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };

@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   
   // Use MotionValues to bypass React state renders completely (Fixes 99% of lag)
   const mouseX = useMotionValue(0);
@@ -14,6 +15,12 @@ const CustomCursor = () => {
   const smoothY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
+    // Disable completely on touch devices to save performance
+    if (window.matchMedia('(pointer: coarse)').matches || !window.matchMedia('(pointer: fine)').matches) {
+      setIsTouchDevice(true);
+      return;
+    }
+
     const updateMousePosition = (e) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -42,6 +49,8 @@ const CustomCursor = () => {
       window.removeEventListener('mouseover', handleMouseOver);
     };
   }, [mouseX, mouseY]);
+
+  if (isTouchDevice) return null;
 
   return (
     <>
