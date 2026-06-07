@@ -7,7 +7,7 @@ export const articlesData = [
     date: "June 7, 2026",
     readTime: "11 Minutes",
     img: "/ai_marketing_blueprint.png",
-    content: \`
+    content: `
 Most businesses are still marketing the hard way — manually, slowly, and expensively. Here's what the ones winning in 2026 are doing differently, and how you can catch up before the gap gets any wider.
 
 Let me be honest with you about something.
@@ -130,7 +130,7 @@ We help businesses scale through AI automation, intelligent lead generation, SEO
 
 [Get your free audit](/contact)
 No commitment. Just a clear picture of where your marketing is leaving money behind.
-\`,
+`,
   },
   {
     id: "ai-in-digital-marketing-strategies-2026",
