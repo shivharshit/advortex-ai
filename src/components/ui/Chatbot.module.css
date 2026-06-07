@@ -81,6 +81,7 @@
   border-bottom: 1px solid var(--glass-border);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
 }
 

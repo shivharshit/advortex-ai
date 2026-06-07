@@ -194,8 +194,16 @@ const Chatbot = () => {
     <>
       {/* Floating Action Button */}
       <div className={styles.fabContainer}>
-        {!isOpen && (
+        {!isOpen && !hasOpened && (
           <div className={styles.fabTooltip}>
+            <button 
+              className={styles.closeTooltip} 
+              onClick={(e) => { e.stopPropagation(); setHasOpened(true); }}
+              aria-label="Close"
+              style={{ position: 'absolute', top: '4px', right: '4px', background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', cursor: 'pointer' }}
+            >
+              <X size={14} />
+            </button>
             <div className={styles.tooltipTitle}>🤖 Chat with Vortex AI Assistant</div>
             <div className={styles.tooltipSub}>Get Instant AI Assistance</div>
           </div>
@@ -225,14 +233,24 @@ const Chatbot = () => {
           >
             {/* Header */}
             <div className={styles.header}>
-              <div className={styles.botAvatar}>
-                <Headset size={20} />
-                <div className={styles.onlineDot}></div>
+              <div className={styles.headerLeft} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div className={styles.botAvatar}>
+                  <Headset size={20} />
+                  <div className={styles.onlineDot}></div>
+                </div>
+                <div className={styles.headerInfo}>
+                  <h3>AdVortex AI</h3>
+                  <span>Chat with Vortex AI Assistant</span>
+                </div>
               </div>
-              <div className={styles.headerInfo}>
-                <h3>AdVortex AI</h3>
-                <span>Chat with Vortex AI Assistant</span>
-              </div>
+              <button 
+                onClick={() => setIsOpen(false)} 
+                className={styles.closeChatBtn}
+                aria-label="Close Chat"
+                style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', opacity: 0.7, padding: '4px' }}
+              >
+                <X size={20} />
+              </button>
             </div>
 
             {/* Messages Area */}
