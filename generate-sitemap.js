@@ -21,7 +21,8 @@ const staticRoutes = [
   '/pricing',
   '/privacy-policy',
   '/terms-of-service',
-  '/careers'
+  '/careers',
+  '/workplace-policy'
 ];
 
 function generateSitemap() {

@@ -1,0 +1,232 @@
+.pageWrapper {
+  padding-top: 100px;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.heroSection {
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+}
+
+.heroContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge {
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--color-purple);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.heroTitle {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.highlightText {
+  background: linear-gradient(135deg, var(--color-cyan), var(--color-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.contentSection {
+  padding: 60px 0 100px;
+}
+
+.introBlock {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+.introBlock h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.introBlock p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.gridSection {
+  margin-bottom: 100px;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.principleCard {
+  padding: 32px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.principleCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background: rgba(168, 85, 247, 0.1);
+  color: var(--color-purple);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.principleCard h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.principleCard p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.policyDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.policyRow {
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  align-items: flex-start;
+}
+
+.policyIcon {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(6, 182, 212, 0.2));
+  color: var(--color-cyan);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policyText h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.policyText p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ctaSection {
+  padding: 0 24px 100px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ctaCard {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 24px;
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaCard h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.ctaCard p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaBtn {
+  font-size: 16px;
+  padding: 14px 32px;
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 36px;
+  }
+  .policyRow {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+  }
+  .ctaCard {
+    padding: 40px 24px;
+  }
+  .ctaCard h2 {
+    font-size: 28px;
+  }
+}

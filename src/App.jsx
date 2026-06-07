@@ -20,6 +20,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Admin from './pages/Admin';
 import Careers from './pages/Careers';
+import WorkplacePolicy from './pages/WorkplacePolicy';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,6 +50,7 @@ function App() {
                 <Route path="/terms-of-service" element={<TermsOfService />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/careers" element={<Careers />} />
+                <Route path="/workplace-policy" element={<WorkplacePolicy />} />
               </Routes>
             </main>
             <Footer />
