@@ -3,7 +3,7 @@ export const articlesData = [
     id: "ai-automation-in-digital-marketing-2026-blueprint",
     category: "AI Automation",
     title: "AI Automation in Digital Marketing: The 2026 Blueprint for Scalable Business Growth",
-    author: "AdVortex AI",
+    author: "Harshit Shiv",
     date: "June 7, 2026",
     readTime: "11 Minutes",
     img: "/ai_marketing_blueprint.png",

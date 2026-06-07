@@ -136,7 +136,20 @@ const BlogPost = () => {
               className={styles.mainContent}
             >
               <div className={styles.markdown}>
-                <ReactMarkdown>
+                <ReactMarkdown
+                  components={{
+                    a: ({node, ...props}) => {
+                      if (props.href === '/contact' || props.children[0] === 'Get your free audit') {
+                        return <Link to={props.href} className={styles.ctaBtn}>{props.children}</Link>;
+                      }
+                      // Check for absolute links vs internal relative
+                      if (props.href && props.href.startsWith('/')) {
+                        return <Link to={props.href}>{props.children}</Link>;
+                      }
+                      return <a {...props} target="_blank" rel="noopener noreferrer">{props.children}</a>;
+                    }
+                  }}
+                >
                   {article.content}
                 </ReactMarkdown>
               </div>
