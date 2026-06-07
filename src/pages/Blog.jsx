@@ -179,8 +179,7 @@ const Blog = () => {
                   <div className={styles.sleekContent}>
                     <h3 className={styles.sleekTitle}>{article.title}</h3>
                     <div className={styles.sleekMeta}>
-                      <Clock size={14} />
-                      <span>{article.readTime}</span>
+                      <span>{article.date}</span>
                     </div>
                   </div>
                 </div>
@@ -275,8 +274,7 @@ const Blog = () => {
                         <span>{article.author}</span>
                       </div>
                       <div className={styles.readTimeSmall}>
-                        <Clock size={14} />
-                        <span>{article.readTime}</span>
+                        <span>{article.date}</span>
                       </div>
                     </div>
                   </div>
