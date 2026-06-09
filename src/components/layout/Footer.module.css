@@ -8,7 +8,7 @@
 
 .footerContainer {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2.5fr;
   gap: 64px;
   margin-bottom: 64px;
 }
@@ -62,8 +62,8 @@
 
 .linksSection {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 .linkGroup h4 {
@@ -72,7 +72,7 @@
   color: var(--color-white);
 }
 
-.linkGroup a {
+.linkGroup a, .linkGroup p {
   display: block;
   color: var(--color-white);
   opacity: 0.6;

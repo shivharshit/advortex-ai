@@ -60,9 +60,8 @@ const Footer = () => {
             <p><strong>AdVortexAI</strong></p>
             <p>Indore, Madhya Pradesh</p>
             <p>India</p>
-            <br />
-            <p><a href="tel:+919183347948">+91 91833 47948</a></p>
-            <p><a href="mailto:support@advortex.in">support@advortex.in</a></p>
+            <a href="tel:+919183347948">+91 91833 47948</a>
+            <a href="mailto:support@advortex.in">support@advortex.in</a>
           </div>
         </div>
       </div>
