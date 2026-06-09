@@ -56,7 +56,7 @@ const Footer = () => {
             <h4>Contact Info</h4>
             <p><strong>AdVortexAI</strong></p>
             <a 
-              href="https://share.google/6wTbt6lGT5eZOMiY1" 
+              href="https://www.google.com/maps/place/Indore,+Madhya+Pradesh,+India/" 
               target="_blank" 
               rel="noopener noreferrer"
               style={{ lineHeight: '1.6' }}
