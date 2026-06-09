@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { ChevronRight, CheckCircle2 } from 'lucide-react';
 import Section from '../components/ui/Section';
 import styles from './ServicesPage.module.css';
