@@ -55,8 +55,14 @@ const Footer = () => {
           <div className={styles.linkGroup}>
             <h4>Contact Info</h4>
             <p><strong>AdVortexAI</strong></p>
-            <p>Indore, Madhya Pradesh</p>
-            <p>India</p>
+            <a 
+              href="https://share.google/6wTbt6lGT5eZOMiY1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ lineHeight: '1.6' }}
+            >
+              Indore, Madhya Pradesh<br/>India
+            </a>
             <a href="tel:+919183347948">+91 91833 47948</a>
             <a href="mailto:support@advortex.in">support@advortex.in</a>
           </div>
