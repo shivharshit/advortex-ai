@@ -43,7 +43,6 @@ const Footer = () => {
             <Link to="/careers">Careers</Link>
             <Link to="/workplace-policy">Workplace Policy</Link>
             <Link to="/contact">Contact</Link>
-            <Link to="/sitemap.xml">Sitemap</Link>
           </div>
           
           <div className={styles.linkGroup}>
@@ -51,8 +50,6 @@ const Footer = () => {
             <a href="https://share.google/6wTbt6lGT5eZOMiY1" target="_blank" rel="noopener noreferrer">Google Business Profile</a>
             <a href="https://www.indiamart.com/company/270068454/" target="_blank" rel="noopener noreferrer">IndiaMART</a>
             <a href="https://www.justdial.com/Balaghat/AdVortex-AI-Near-Durga-Temple-Katangi/9999P7632-7632-260607115547-M1S2_BZDET" target="_blank" rel="noopener noreferrer">Justdial</a>
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-of-service">Terms of Service</Link>
           </div>
           
           <div className={styles.linkGroup}>
@@ -67,8 +64,13 @@ const Footer = () => {
       </div>
       
       <div className={styles.copyright}>
-        <div className="container">
+        <div className={`container ${styles.copyrightContainer}`}>
           <p>&copy; {new Date().getFullYear()} AdVortex AI. All rights reserved.</p>
+          <div className={styles.legalLinks}>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-of-service">Terms of Service</Link>
+            <Link to="/sitemap.xml">Sitemap</Link>
+          </div>
         </div>
       </div>
     </footer>
