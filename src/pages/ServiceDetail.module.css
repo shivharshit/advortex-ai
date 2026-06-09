@@ -1,0 +1,180 @@
+.servicePageWrapper {
+  padding-top: 120px;
+  min-height: 100vh;
+}
+
+.heroSection {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--color-cyan);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.contentSection {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.articleBody {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.125rem;
+}
+
+.articleBody h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin: 3rem 0 1.5rem;
+}
+
+.articleBody h3 {
+  color: #e2e8f0;
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+}
+
+.articleBody p {
+  margin-bottom: 1.5rem;
+}
+
+.articleBody ul {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.articleBody li {
+  margin-bottom: 0.75rem;
+}
+
+.featuresSection {
+  margin-top: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #fff;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.featureIcon {
+  color: var(--color-cyan);
+}
+
+.faqSection {
+  margin-top: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faqItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.faqItem h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.faqItem p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.ctaSection {
+  margin: 6rem 0;
+  text-align: center;
+}
+
+.ctaCard {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+}
+
+.ctaCard h2 {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.ctaCard p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .ctaGroup, .ctaButtons {
+    flex-direction: column;
+  }
+}

@@ -8,6 +8,7 @@ import styles from './ServicesPage.module.css';
 const servicesData = [
   {
     title: "AI Chatbots",
+    slug: "ai-chatbot-development",
     subcategories: [
       { name: "AI Website Chatbots", items: ["24/7 Customer Support", "Lead Qualification", "FAQ Automation", "Appointment Booking", "Product Recommendations"] },
       { name: "WhatsApp AI Chatbots", items: ["Lead Capture", "Customer Support", "Automated Follow-Ups", "Order Tracking", "WhatsApp Marketing"] },
@@ -17,6 +18,7 @@ const servicesData = [
   },
   {
     title: "AI Automation Services",
+    slug: "ai-automation",
     subcategories: [
       { name: "Business Process Automation", items: ["Workflow Automation", "Task Automation", "Data Entry Automation", "Document Processing"] },
       { name: "CRM Automation", items: ["Lead Management", "Contact Segmentation", "Pipeline Automation", "Customer Follow-Ups"] },
@@ -27,6 +29,7 @@ const servicesData = [
   },
   {
     title: "Website Development",
+    slug: "website-development",
     subcategories: [
       { name: "Business Websites", items: ["Corporate Websites", "Company Portfolios", "Service-Based Websites"] },
       { name: "Landing Pages", items: ["Lead Generation Pages", "Product Launch Pages", "Sales Funnels"] },
@@ -37,6 +40,7 @@ const servicesData = [
   },
   {
     title: "Digital Marketing",
+    slug: "digital-marketing",
     subcategories: [
       { name: "Meta Ads", items: ["Facebook Advertising", "Instagram Advertising", "Retargeting Campaigns", "Lead Generation Campaigns"] },
       { name: "Google Ads", items: ["Search Campaigns", "Display Campaigns", "Remarketing", "Conversion Optimization"] },
@@ -46,6 +50,7 @@ const servicesData = [
   },
   {
     title: "SEO Services",
+    slug: "seo-services",
     subcategories: [
       { name: "On-Page SEO", items: ["Keyword Optimization", "Content Optimization", "Technical Improvements"] },
       { name: "Technical SEO", items: ["Website Audits", "Speed Optimization", "Schema Markup", "Core Web Vitals"] },
@@ -55,6 +60,7 @@ const servicesData = [
   },
   {
     title: "Lead Generation",
+    slug: "lead-generation",
     subcategories: [
       { name: "B2B Lead Generation", items: ["Prospect Research", "Lead Qualification", "Appointment Setting"] },
       { name: "LinkedIn Lead Generation", items: ["Profile Optimization", "Outreach Campaigns", "Connection Growth"] },
@@ -63,36 +69,30 @@ const servicesData = [
     ]
   },
   {
-    title: "AI Content Creation",
+    title: "WhatsApp Automation",
+    slug: "whatsapp-automation",
     subcategories: [
-      { name: "AI Content Writing", items: ["Blog Articles", "Website Copy", "Sales Copy", "Email Campaigns"] },
-      { name: "AI Image Generation", items: ["Social Media Graphics", "Ad Creatives", "Marketing Assets"] },
-      { name: "AI Video Creation", items: ["Short Form Videos", "Promotional Videos", "AI Avatars", "Video Editing"] }
+      { name: "API Integration", items: ["Official WhatsApp Business API", "Green Tick Verification"] },
+      { name: "Sales Funnels", items: ["Abandoned Cart Recovery", "Automated Checkout"] },
+      { name: "Broadcasts", items: ["Targeted Messaging", "Promotional Campaigns"] }
     ]
   },
   {
-    title: "Analytics & Reporting",
+    title: "Business Process Automation",
+    slug: "business-process-automation",
     subcategories: [
-      { name: "Business Analytics", items: ["KPI Dashboards", "Performance Reports", "Growth Tracking"] },
-      { name: "Marketing Analytics", items: ["Campaign Reporting", "Attribution Analysis", "Conversion Tracking"] },
-      { name: "AI Insights", items: ["Predictive Analytics", "Customer Behavior Analysis", "Growth Recommendations"] }
+      { name: "Zapier & Make", items: ["API Integrations", "Middleware Logic"] },
+      { name: "Finance Automation", items: ["Invoice Generation", "Payment Reconciliation"] },
+      { name: "Operations", items: ["Employee Onboarding", "Reporting Dashboards"] }
     ]
   },
   {
-    title: "Consulting & Strategy",
+    title: "Social Media Marketing",
+    slug: "social-media-marketing",
     subcategories: [
-      { name: "AI Strategy Consulting", items: ["AI Adoption Planning", "Automation Roadmaps", "Business Transformation"] },
-      { name: "Digital Growth Consulting", items: ["Marketing Strategy", "Funnel Strategy", "Scaling Systems"] },
-      { name: "Technology Consulting", items: ["Tool Selection", "Software Integrations", "Process Optimization"] }
-    ]
-  },
-  {
-    title: "Integrations & Platforms",
-    subcategories: [
-      { name: "CRM Integrations", items: ["HubSpot", "Salesforce", "Zoho", "GoHighLevel"] },
-      { name: "Automation Platforms", items: ["n8n", "Make", "Zapier"] },
-      { name: "AI Platforms", items: ["OpenAI", "Claude", "Gemini"] },
-      { name: "Business Tools", items: ["Google Workspace", "Slack", "Notion", "Airtable", "Calendly"] }
+      { name: "Viral Content", items: ["Short-form Video", "Instagram Reels", "TikToks"] },
+      { name: "B2B Strategy", items: ["LinkedIn Thought Leadership", "Executive Ghostwriting"] },
+      { name: "Community Management", items: ["Comment Moderation", "Engagement Tracking"] }
     ]
   }
 ];
@@ -183,6 +183,15 @@ const ServicesPage = () => {
                     </div>
                   ))}
                 </div>
+                {servicesData[activeTab].slug && (
+                  <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+                    <Link to={`/services/${servicesData[activeTab].slug}`}>
+                      <button className={styles.viewMoreBtn}>
+                        Explore {servicesData[activeTab].title} Deep Dive <ChevronRight size={16} />
+                      </button>
+                    </Link>
+                  </div>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>

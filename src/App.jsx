@@ -9,6 +9,7 @@ import WhatsAppButton from './components/ui/WhatsAppButton';
 import LoadingScreen from './components/ui/LoadingScreen';
 import Home from './pages/Home';
 import ServicesPage from './pages/ServicesPage';
+import ServiceDetail from './pages/ServiceDetail';
 import Portfolio from './pages/Portfolio';
 import AITools from './pages/AITools';
 import Blog from './pages/Blog';
@@ -39,6 +40,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<ServicesPage />} />
+                <Route path="/services/:slug" element={<ServiceDetail />} />
                 <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="/ai-tools" element={<AITools />} />
                 <Route path="/blog" element={<Blog />} />

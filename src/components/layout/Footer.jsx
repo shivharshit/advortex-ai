@@ -25,10 +25,15 @@ const Footer = () => {
         <div className={styles.linksSection}>
           <div className={styles.linkGroup}>
             <h4>Services</h4>
-            <Link to="/services?tab=ai-chatbots">AI Chatbots</Link>
-            <Link to="/services?tab=business-automation">Business Automation</Link>
-            <Link to="/services?tab=website-development">Website Development</Link>
-            <Link to="/services?tab=digital-marketing">Digital Marketing</Link>
+            <Link to="/services/ai-automation">AI Automation Services</Link>
+            <Link to="/services/ai-chatbot-development">AI Chatbot Development</Link>
+            <Link to="/services/whatsapp-automation">WhatsApp Automation</Link>
+            <Link to="/services/business-process-automation">Business Process Automation</Link>
+            <Link to="/services/website-development">Website Development</Link>
+            <Link to="/services/seo-services">SEO Services</Link>
+            <Link to="/services/digital-marketing">Digital Marketing</Link>
+            <Link to="/services/social-media-marketing">Social Media Marketing</Link>
+            <Link to="/services/lead-generation">Lead Generation Services</Link>
           </div>
           
           <div className={styles.linkGroup}>
@@ -38,12 +43,26 @@ const Footer = () => {
             <Link to="/careers">Careers</Link>
             <Link to="/workplace-policy">Workplace Policy</Link>
             <Link to="/contact">Contact</Link>
+            <Link to="/sitemap.xml">Sitemap</Link>
           </div>
           
           <div className={styles.linkGroup}>
-            <h4>Legal</h4>
+            <h4>Connect</h4>
+            <a href="https://share.google/6wTbt6lGT5eZOMiY1" target="_blank" rel="noopener noreferrer">Google Business Profile</a>
+            <a href="https://www.indiamart.com/company/270068454/" target="_blank" rel="noopener noreferrer">IndiaMART</a>
+            <a href="https://www.justdial.com/company/advortexai/" target="_blank" rel="noopener noreferrer">Justdial</a>
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/terms-of-service">Terms of Service</Link>
+          </div>
+          
+          <div className={styles.linkGroup}>
+            <h4>Contact Info</h4>
+            <p><strong>AdVortexAI</strong></p>
+            <p>Indore, Madhya Pradesh</p>
+            <p>India</p>
+            <br />
+            <p><a href="tel:+919183347948">+91 91833 47948</a></p>
+            <p><a href="mailto:support@advortex.in">support@advortex.in</a></p>
           </div>
         </div>
       </div>
