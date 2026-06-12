@@ -75,6 +75,7 @@ const Footer = () => {
           <div className={styles.legalLinks}>
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/terms-of-service">Terms of Service</Link>
+            <span style={{ color: 'inherit', opacity: 0.8, cursor: 'default' }}>Sitemap</span>
           </div>
         </div>
       </div>
