@@ -13,7 +13,6 @@ import FAQ from '../components/sections/FAQ';
 import FinalCTA from '../components/sections/FinalCTA';
 import AIParticles from '../components/ui/AIParticles';
 import heroVideo from '../assets/hero-video.mp4';
-import heroPoster from '../assets/hero.png';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -35,7 +34,6 @@ const Home = () => {
       <div className={styles.videoBackground}>
         <video 
           src={heroVideo} 
-          poster={heroPoster}
           autoPlay 
           muted 
           loop 
