@@ -24,43 +24,36 @@ import Careers from './pages/Careers';
 import WorkplacePolicy from './pages/WorkplacePolicy';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Removed heavy global mouse tracking to fix layout thrashing lag
-
   return (
     <>
-      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
-      <div style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.8s ease-in-out' }}>
-        <HelmetProvider>
-          <Router>
-            <CustomCursor />
-            <Navbar />
-            <main>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/services" element={<ServicesPage />} />
-                <Route path="/services/:slug" element={<ServiceDetail />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/ai-tools" element={<AITools />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/pricing" element={<PricingPage />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/terms-of-service" element={<TermsOfService />} />
-                <Route path="/admin" element={<Admin />} />
-                <Route path="/careers" element={<Careers />} />
-                <Route path="/workplace-policy" element={<WorkplacePolicy />} />
-              </Routes>
-            </main>
-            <Footer />
-            <Chatbot />
-            <WhatsAppButton />
-          </Router>
-        </HelmetProvider>
-      </div>
+      <HelmetProvider>
+        <Router>
+          <CustomCursor />
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/services/:slug" element={<ServiceDetail />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/ai-tools" element={<AITools />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/pricing" element={<PricingPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/workplace-policy" element={<WorkplacePolicy />} />
+            </Routes>
+          </main>
+          <Footer />
+          <Chatbot />
+          <WhatsAppButton />
+        </Router>
+      </HelmetProvider>
     </>
   );
 }
