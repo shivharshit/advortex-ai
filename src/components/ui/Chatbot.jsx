@@ -24,14 +24,14 @@ const Chatbot = () => {
 
   const inputRef = useRef(null);
 
-  // Auto-open after 15 seconds
+  // Auto-open after 3 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hasOpened) {
         setIsOpen(true);
         setHasOpened(true);
       }
-    }, 15000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, [hasOpened]);
 
