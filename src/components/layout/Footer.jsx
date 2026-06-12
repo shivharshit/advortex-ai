@@ -75,7 +75,6 @@ const Footer = () => {
           <div className={styles.legalLinks}>
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/terms-of-service">Terms of Service</Link>
-            <Link to="/sitemap.xml">Sitemap</Link>
           </div>
         </div>
       </div>
