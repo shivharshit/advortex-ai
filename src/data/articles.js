@@ -6,7 +6,7 @@ export const articlesData = [
     author: "Harshit Shiv",
     date: "June 12, 2026",
     readTime: "10 min read",
-    img: "/advortex_dash-o.png",
+    img: "/digital-transformation.png",
     content: `
 Let's be honest — the phrase "digital transformation" has been thrown around so much that it almost lost its meaning. But in 2026, it's impossible to ignore what's actually happening on the ground. Businesses that moved early on AI, automation, and data are growing faster, spending less, and serving customers better. The ones that didn't? Many of them are struggling to catch up.
 
