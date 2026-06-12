@@ -102,7 +102,9 @@ const oneTimeServices = [
   { name: "Funnel Setup", priceINR: "₹9,999", priceUSD: "$120" },
   { name: "Branding Kit (Logo + Identity)", priceINR: "₹4,999", priceUSD: "$60" },
   { name: "AI Chatbot / Chatbox Creation", priceINR: "₹6,999 – ₹14,999", priceUSD: "$85 – $180" },
-  { name: "UGC Video Ads Creation", priceINR: "₹7,999 – ₹19,999", priceUSD: "$85 – $220" }
+  { name: "UGC Video Ads Creation", priceINR: "₹7,999 – ₹19,999", priceUSD: "$85 – $220" },
+  { name: "30 Days Content Calendar (IG)", priceINR: "₹3,999 – ₹7,999", priceUSD: "$45 – $90" },
+  { name: "Reels Creation", priceINR: "₹2,999 – ₹5,999", priceUSD: "$35 – $70" }
 ];
 
 const AnimatedPrice = ({ priceINR, priceUSD, currency }) => {
