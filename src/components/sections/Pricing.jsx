@@ -101,7 +101,8 @@ const oneTimeServices = [
   { name: "Meta Ads Setup", priceINR: "₹3,999", priceUSD: "$50" },
   { name: "Funnel Setup", priceINR: "₹9,999", priceUSD: "$120" },
   { name: "Branding Kit (Logo + Identity)", priceINR: "₹4,999", priceUSD: "$60" },
-  { name: "AI Chatbot / Chatbox Creation", priceINR: "₹6,999 – ₹14,999", priceUSD: "$85 – $180" }
+  { name: "AI Chatbot / Chatbox Creation", priceINR: "₹6,999 – ₹14,999", priceUSD: "$85 – $180" },
+  { name: "UGC Video Ads Creation", priceINR: "₹7,999 – ₹19,999", priceUSD: "$85 – $220" }
 ];
 
 const AnimatedPrice = ({ priceINR, priceUSD, currency }) => {
