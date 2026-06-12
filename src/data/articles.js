@@ -165,7 +165,7 @@ The choice is straightforward. The question is: are you ready to lead?
 
 **Ready to start your digital transformation journey?**
 [Partner with AdVortexAI — AI-powered digital transformation for ambitious businesses.](/contact)
-\`,
+`,
   },
   {
     id: "ai-automation-in-digital-marketing-2026-blueprint",
