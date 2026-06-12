@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import CustomCursor from './components/ui/CustomCursor';
 import Chatbot from './components/ui/Chatbot';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import LoadingScreen from './components/ui/LoadingScreen';
@@ -28,7 +27,6 @@ function App() {
     <>
       <HelmetProvider>
         <Router>
-          <CustomCursor />
           <Navbar />
           <main>
             <Routes>
