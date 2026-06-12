@@ -12,6 +12,7 @@ import Pricing from '../components/sections/Pricing';
 import FAQ from '../components/sections/FAQ';
 import FinalCTA from '../components/sections/FinalCTA';
 import AIParticles from '../components/ui/AIParticles';
+import LazySection from '../components/ui/LazySection';
 import heroVideo from '../assets/hero-video.mp4';
 import styles from './Home.module.css';
 
@@ -59,15 +60,15 @@ const Home = () => {
         {/* Wrap the rest of the sections in a cinematic glassmorphism container */}
         <div className={styles.cinematicSection}>
           <AIParticles />
-          <TrustLogos />
-          <Services />
-          <Process />
-          <Results />
-          <CaseStudies />
-          <Testimonials />
-          <Pricing />
-          <FAQ />
-          <FinalCTA />
+          <LazySection minHeight="400px"><TrustLogos /></LazySection>
+          <LazySection minHeight="800px"><Services /></LazySection>
+          <LazySection minHeight="600px"><Process /></LazySection>
+          <LazySection minHeight="600px"><Results /></LazySection>
+          <LazySection minHeight="800px"><CaseStudies /></LazySection>
+          <LazySection minHeight="600px"><Testimonials /></LazySection>
+          <LazySection minHeight="800px"><Pricing /></LazySection>
+          <LazySection minHeight="600px"><FAQ /></LazySection>
+          <LazySection minHeight="400px"><FinalCTA /></LazySection>
         </div>
       </div>
     </div>
