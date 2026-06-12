@@ -11,8 +11,8 @@ const monthlyPlans = [
   {
     name: "Starter Growth",
     subtitle: "For small businesses & personal brands starting online",
-    priceINR: "₹9,999",
-    priceUSD: "$120",
+    priceINR: "₹18,699",
+    priceUSD: "$199",
     features: [
       "Social Media Management (2 platforms)",
       "8–12 Monthly Posts (AI-assisted creatives)",
@@ -28,8 +28,8 @@ const monthlyPlans = [
   {
     name: "Growth Accelerator",
     subtitle: "For businesses ready to generate consistent leads",
-    priceINR: "₹19,999",
-    priceUSD: "$240",
+    priceINR: "₹39,999",
+    priceUSD: "$440",
     features: [
       "Full Social Media Mgmt (IG, FB, LinkedIn)",
       "15–20 posts + reels/month",
@@ -46,8 +46,8 @@ const monthlyPlans = [
   {
     name: "Performance Marketing",
     subtitle: "For brands focused on sales & ROI",
-    priceINR: "₹34,999",
-    priceUSD: "$420",
+    priceINR: "₹69,999",
+    priceUSD: "$760",
     features: [
       "Advanced Meta Ads + Google Ads optimization",
       "Funnel building (landing pages + tracking)",
@@ -64,8 +64,8 @@ const monthlyPlans = [
   {
     name: "AdVortex Dominance",
     subtitle: "Full AI-powered growth system for scaling brands",
-    priceINR: "₹59,999",
-    priceUSD: "$720",
+    priceINR: "₹99,999",
+    priceUSD: "$1100",
     features: [
       "Complete Digital Marketing Management",
       "AI-driven content system",
