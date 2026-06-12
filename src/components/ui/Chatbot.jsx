@@ -24,23 +24,23 @@ const Chatbot = () => {
 
   const inputRef = useRef(null);
 
-  // Auto-open after 3 seconds
+  // Auto-open after 2 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hasOpened) {
         setIsOpen(true);
         setHasOpened(true);
       }
-    }, 3000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, [hasOpened]);
 
-  // Auto-close after 10 seconds of inactivity
+  // Auto-close after 2 seconds of inactivity
   useEffect(() => {
     if (!isOpen) return;
     const timer = setTimeout(() => {
       setIsOpen(false);
-    }, 10000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, [isOpen, messages, inputValue, isTyping]);
 
