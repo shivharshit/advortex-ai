@@ -18,8 +18,13 @@ import styles from './Home.module.css';
 const Home = () => {
   const containerRef = useRef(null);
 
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Defer heavy video loading to prioritize LCP
+    const timer = setTimeout(() => setVideoLoaded(true), 1500);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -32,16 +37,18 @@ const Home = () => {
 
       {/* Layer 1 & 2: Video and Gradient Overlay */}
       <div className={styles.videoBackground}>
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline 
-          className={styles.videoElement}
-        >
-          <source src="/mobile-video.mp4" media="(max-width: 768px)" type="video/mp4" />
-          <source src={heroVideo} media="(min-width: 769px)" type="video/mp4" />
-        </video>
+        {videoLoaded && (
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className={styles.videoElement}
+          >
+            <source src="/mobile-video.mp4" media="(max-width: 768px)" type="video/mp4" />
+            <source src={heroVideo} media="(min-width: 769px)" type="video/mp4" />
+          </video>
+        )}
         <div className={styles.videoOverlay} />
       </div>
 

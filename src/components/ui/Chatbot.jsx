@@ -24,8 +24,9 @@ const Chatbot = () => {
 
   const inputRef = useRef(null);
 
-  // Auto-open after 2 seconds
+  // Auto-open after 2 seconds on desktop only
   useEffect(() => {
+    if (window.innerWidth < 768) return; // Do not auto-open on mobile to save TBT
     const timer = setTimeout(() => {
       if (!hasOpened) {
         setIsOpen(true);

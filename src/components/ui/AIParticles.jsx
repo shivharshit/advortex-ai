@@ -11,6 +11,8 @@ const AIParticles = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  if (isMobile) return null;
+
   return (
     <div style={{
       position: 'absolute',
@@ -18,7 +20,7 @@ const AIParticles = () => {
       pointerEvents: 'none',
       zIndex: 0,
       overflow: 'hidden',
-      opacity: isMobile ? 0.2 : 0.4
+      opacity: 0.4
     }}>
       {/* Floating Particles - Render fewer on mobile */}
       {[...Array(isMobile ? 5 : 15)].map((_, i) => (
