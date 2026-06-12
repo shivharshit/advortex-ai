@@ -1,7 +1,7 @@
 export const articlesData = [
   {
     id: "digital-transformation-2026-ai-automation",
-    category: "Digital Transformation",
+    category: "AI Automation",
     title: "Digital Transformation in 2026: How AI, Automation, and Data Are Reshaping Modern Businesses",
     author: "Harshit Shiv",
     date: "June 12, 2026",
