@@ -33,13 +33,15 @@ const Home = () => {
       {/* Layer 1 & 2: Video and Gradient Overlay */}
       <div className={styles.videoBackground}>
         <video 
-          src={heroVideo} 
           autoPlay 
           muted 
           loop 
           playsInline 
           className={styles.videoElement}
-        />
+        >
+          <source src="/mobile-video.mp4" media="(max-width: 768px)" type="video/mp4" />
+          <source src={heroVideo} media="(min-width: 769px)" type="video/mp4" />
+        </video>
         <div className={styles.videoOverlay} />
       </div>
 

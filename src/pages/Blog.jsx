@@ -173,7 +173,7 @@ const Blog = () => {
               <Link to={`/blog/${article.id}`} className={styles.sleekCardLink}>
                 <div className={styles.sleekCard}>
                   <div className={styles.sleekImageWrapper}>
-                    <img src={article.img} alt={article.title} className={styles.sleekImage} />
+                    <img src={article.img} alt={article.title} className={styles.sleekImage} loading="lazy" />
                     <div className={styles.sleekCategoryBadge}>{article.category}</div>
                   </div>
                   <div className={styles.sleekContent}>
@@ -263,7 +263,7 @@ const Blog = () => {
               <Link to={`/blog/${article.id}`} style={{textDecoration: 'none'}}>
                 <GlassCard className={styles.articleCard}>
                   <div className={styles.articleImageWrapper}>
-                    <img src={article.img} alt={article.title} className={styles.articleImage} />
+                    <img src={article.img} alt={article.title} className={styles.articleImage} loading="lazy" />
                     <div className={styles.articleCategory}>{article.category}</div>
                   </div>
                   <div className={styles.articleCardContent}>
@@ -292,7 +292,7 @@ const Blog = () => {
           <div className={styles.founderGrid}>
             <div className={styles.founderImageContainer}>
               <div className={styles.founderImageGlow}></div>
-              <img src="/founder.jpg" alt="Harshit Shiv" className={styles.founderLargeImg} />
+              <img src="/founder.jpg" alt="Harshit Shiv" className={styles.founderLargeImg} loading="lazy" />
             </div>
             
             <div className={styles.founderContent}>

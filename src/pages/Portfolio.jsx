@@ -144,7 +144,7 @@ const DashboardMockup = ({ image }) => (
     </div>
     {image ? (
       <div className={styles.dashImageContainer}>
-        <img src={image} alt="Dashboard Screenshot" className={styles.dashImage} />
+        <img src={image} alt="Dashboard Screenshot" className={styles.dashImage} loading="lazy" />
       </div>
     ) : (
       <div className={styles.dashBody}>
@@ -191,7 +191,7 @@ const NodesMockup = ({ image }) => (
   <div className={styles.nodesWindow}>
     {image ? (
       <div className={styles.dashImageContainer}>
-        <img src={image} alt="Workflow Screenshot" className={styles.dashImage} />
+        <img src={image} alt="Workflow Screenshot" className={styles.dashImage} loading="lazy" />
       </div>
     ) : (
       <>
@@ -387,7 +387,7 @@ const FounderQuote = () => {
           </p>
           <div className={styles.founderInfo}>
             <div className={styles.founderAvatar}>
-              <img src={founderImg} alt="Harshit Shiv" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+              <img src={founderImg} alt="Harshit Shiv" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} loading="lazy" />
             </div>
             <div className={styles.founderDetails}>
               <div className={styles.founderName}>Harshit Shiv</div>

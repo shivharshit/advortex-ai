@@ -145,6 +145,7 @@ const TiltCard = ({ tool }) => {
                 alt={`${tool.name} Logo`} 
                 className={styles.toolLogo}
                 onError={handleImageError}
+                loading="lazy"
               />
             ) : (
               <div className={styles.fallbackLogo}>{tool.name.charAt(0)}</div>
