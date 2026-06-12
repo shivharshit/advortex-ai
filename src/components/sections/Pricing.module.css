@@ -107,6 +107,9 @@
   font-size: 22px;
   margin-bottom: 8px;
   color: var(--color-white);
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .planSubtitle {
